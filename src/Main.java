@@ -1,15 +1,51 @@
+import java.text.NumberFormat;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        NumberFormat pound = NumberFormat.getCurrencyInstance();
+        String productValue = pound.format(120.80);
+        System.out.println(productValue);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
-    }
-}
+
+        int a = 80;
+        int b = 5;
+        System.out.println(a != b);
+
+
+
+        //Comprar produto entre $ 10 e $ 15 :
+        int priceProduct = 20;
+        boolean buy = priceProduct >=10 && priceProduct <=15;
+        System.out.println(buy);
+
+        // Financiamento de casa
+        boolean temEmprego = true;
+        boolean temEmpresa = true;
+        boolean tem50k = true;
+        boolean podeFinanciar =(temEmprego || temEmpresa) && tem50k;
+        System.out.println(podeFinanciar);
+
+        // Comprar carro
+        int valorCarro =74_000;
+        if(valorCarro > 100_000)
+            System.out.println("Não comprar. Acima da tabela");
+        else if (valorCarro >=90_000 && valorCarro <=100_000)
+            System.out.println("Comprar o carro");
+        else
+            System.out.println("Não comprar. Valor abaixo da tabela");
+
+        // Ingresso na balada
+
+        int ingresso = 700;
+        String terAcesso = "Pista";
+        if (ingresso >=500)
+            terAcesso = "VIP";
+        else
+            terAcesso = "Pista";
+        System.out.println(terAcesso);
+
+        // String terAcesso = ingresso>= 500 ? "Vip" : "Pista";
+        // System.out.println(terAcesso);
+}}
